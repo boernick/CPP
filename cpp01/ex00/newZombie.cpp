@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.cpp                                         :+:      :+:    :+:   */
+/*   newZombie                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:45:48 by nboer             #+#    #+#             */
-/*   Updated: 2025/03/07 15:50:02 by nboer            ###   ########.fr       */
+/*   Created: 2025/03/08 14:09:21 by nboer             #+#    #+#             */
+/*   Updated: 2025/03/08 17:06:44 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "zombie.hpp"
+# include "Zombie.hpp"
 
-class Zombie{
-private:
-		std::string	number;
-		std::string	name;
-		std::string	lastname
+Zombie	*newZombie(std::string _name){
+	Zombie	*z;
+	
+	z = new Zombie(_name);
+	return (z);
 }
-

@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:45:29 by nboer             #+#    #+#             */
-/*   Updated: 2025/03/08 18:04:47 by nboer            ###   ########.fr       */
+/*   Created: 2025/03/07 15:49:33 by nboer             #+#    #+#             */
+/*   Updated: 2025/03/08 17:29:22 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-int	main(void)
-{
-	Zombie *z;
+# include <iostream>
+# include <iomanip>
+
+# define ZOMBIE_MSG "BraiiiiiiinnnzzzZ..."
+
+class Zombie{
+	private:
+		std::string	name;
 	
-	z = newZombie("Henk"); //heap
-	z->announce();
-	randomChump("Ingrid"); //stack
-	delete(z);
-	return (0);
-}
+	public:
+		Zombie(std::string _name);
+		~Zombie(void);
+		void announce(void);
+};
+
+Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
+
+# endif
