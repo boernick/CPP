@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:33:31 by nboer             #+#    #+#             */
-/*   Updated: 2025/03/13 18:46:01 by nboer            ###   ########.fr       */
+/*   Updated: 2025/03/13 18:50:06 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void read_infile(char* filename, std::string s1, std::string s2)
 	std::ifstream infile;
 	std::ostringstream ss;
 	std::ofstream outfile("outfile.txt");
+	std::string result;
+	size_t pos = 0;
+	size_t last_pos = 0;
 	
 	infile.open(filename);
 	ss << infile.rdbuf();
 	std::string content = ss.str();
 
-	std::string result;
-	size_t pos = 0;
-	size_t last_pos = 0;
 		
 	while ((pos = content.find(s1, last_pos)) != std::string::npos) // terwijl ik string s1 blijf vinden
 	{
