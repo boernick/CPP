@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nboer <nboer@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/13 14:38:00 by nboer             #+#    #+#              #
-#    Updated: 2025/03/13 14:38:01 by nboer            ###   ########.fr        #
+#    Created: 2025/03/13 14:37:43 by nboer             #+#    #+#              #
+#    Updated: 2025/03/13 14:37:44 by nboer            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brain
-SRC = main.cpp
+NAME = fight
+SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -33,3 +33,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
