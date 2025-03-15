@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:33:31 by nboer             #+#    #+#             */
-/*   Updated: 2025/03/13 18:50:06 by nboer            ###   ########.fr       */
+/*   Updated: 2025/03/15 13:12:43 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	error_handler(std::string msg)
 	return (1);
 }
 
-void read_infile(char* filename, std::string s1, std::string s2)
+void replace_str(char* filename, std::string s1, std::string s2)
 {
 	std::ifstream infile;
 	std::ostringstream ss;
@@ -34,14 +34,13 @@ void read_infile(char* filename, std::string s1, std::string s2)
 	ss << infile.rdbuf();
 	std::string content = ss.str();
 
-		
-	while ((pos = content.find(s1, last_pos)) != std::string::npos) // terwijl ik string s1 blijf vinden
+	while ((pos = content.find(s1, last_pos)) != std::string::npos)
 	{
 		result.append(content.substr(last_pos, pos - last_pos));
 		result.append(s2);
 		last_pos = pos + s1.length();
-		pos += s1.length();
 	}
+	result.append(content.substr(last_pos, pos - last_pos));
 	infile.close();
 	outfile << result;
 	outfile.close();
@@ -51,6 +50,6 @@ int	main(int argc, char **argv)
 {
 	if (argc != 4)
 		return (error_handler("Error: wrong argument count"));
-	read_infile(argv[1], argv[2], argv[3]);
+	replace_str(argv[1], argv[2], argv[3]);
 	return (0);	
 }
