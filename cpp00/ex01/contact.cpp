@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 16:30:24 by nboer             #+#    #+#             */
-/*   Updated: 2025/03/09 17:19:36 by nboer            ###   ########.fr       */
+/*   Updated: 2025/03/15 18:08:58 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Contact::Contact() : _number(""), _name(""), _lastname(""), _nickname(""), _secret("") {}
 
 int Contact::GetIndex() {
-	return index;
+	return _index;
 }
 
 const	std::string &Contact::GetName() const {
@@ -32,7 +32,7 @@ void Contact::SetField(std::string &field, const std::string &fieldName){
 }
 
 void Contact::SetContact(int i){
-	index = i;
+	_index = i;
 	SetField(_name, "Name");
 	SetField(_lastname, "Last Name");
 	SetField(_number, "Number");
