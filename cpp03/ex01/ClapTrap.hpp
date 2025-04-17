@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:45:29 by nboer             #+#    #+#             */
-/*   Updated: 2025/03/11 22:49:04 by nick             ###   ########.fr       */
+/*   Created: 2025/04/17 14:19:07 by nick              #+#    #+#             */
+/*   Updated: 2025/04/17 16:37:15 by nick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CLAPTRAP_H
+#define CLAPTRAP_H
 
-int	main(void)
-{
-	Zombie *horde;
-	int size = 5;
-		
-	horde = zombieHorde(size, "UNDEAD");
-	for (int i = 0; i < size; i++)
-		horde[i].announce();
-	delete[] horde;
-	return (0);
-}
+#include <iostream>
+
+class ClapTrap{
+	private:
+		std::string _Name;
+		int			_Hitpoints;
+		int			_EnergyPoints;
+		int			_AttackDamage;
+	public:
+		// ClapTrap(void){}
+		ClapTrap(std::string Name);
+		~ClapTrap();
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+};
+
+#endif

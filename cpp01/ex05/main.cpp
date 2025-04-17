@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 17:33:01 by nboer             #+#    #+#             */
-/*   Updated: 2025/03/15 18:59:33 by nboer            ###   ########.fr       */
+/*   Updated: 2025/03/16 15:56:24 by nick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ int main(void)
 
 	for (int i = 0; i < n_complaints; i++)
 		Karen.complain(Karen.getLevel(i % 4));
+	return (0);
 }
