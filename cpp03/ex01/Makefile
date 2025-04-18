@@ -6,12 +6,12 @@
 #    By: nick <nick@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 14:37:36 by nboer             #+#    #+#              #
-#    Updated: 2025/04/17 17:56:50 by nick             ###   ########.fr        #
+#    Updated: 2025/04/18 15:28:59 by nick             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = scavtrap
-SRC = main.cpp ClapTrap.cpp Scavtrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
