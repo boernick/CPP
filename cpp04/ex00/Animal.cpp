@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 16:09:59 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/19 17:35:29 by nboer            ###   ########.fr       */
+/*   Created: 2025/04/19 16:41:42 by nboer             #+#    #+#             */
+/*   Updated: 2025/04/19 17:38:58 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
 
-int main(void)
-{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+// constructor
+Animal::Animal(){
+	std::cout << "Animal constructed" << std::endl;
+	this->_Type = "Generic Animal";
+}
+
+// constructor with type parameter
+Animal::Animal(std::string type){
+	this->_Type = type;
+	std::cout << "Animal constructed of type: " << this->_Type << std::endl;
+}
+
+// copy contructor
+Animal::Animal(const Animal &copy){
 	
-	return 0;
+}
+
+// deconstructor
+Animal::~Animal(){
+	std::cout << "Animal deconstructed" << std::endl;
 }
