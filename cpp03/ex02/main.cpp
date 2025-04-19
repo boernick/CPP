@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 17:44:15 by nick              #+#    #+#             */
-/*   Updated: 2025/04/19 15:39:00 by nboer            ###   ########.fr       */
+/*   Created: 2025/04/17 16:29:33 by nick              #+#    #+#             */
+/*   Updated: 2025/04/19 15:30:33 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-#include "ClapTrap.hpp"
+int main(void)
+{	
+	FragTrap hans("Hans");
+	ClapTrap sjoerd("Sjoerd");
+	ScavTrap nick("Nick");
 
-class ScavTrap : public ClapTrap{
-	public:
-		~ScavTrap();
-		ScavTrap(std::string Name);
-		ScavTrap(const ScavTrap &copy);
-		ScavTrap &operator=(const ScavTrap &src);
-		void attack(const std::string& target);
-		void guardGate();
-};
-
-#endif
+	hans.attack("a random target");
+	sjoerd.attack("a small target");
+	nick.attack("a big target");
+	sjoerd.takeDamage(5);
+	nick.takeDamage(5);
+	hans.takeDamage(5);
+	nick.guardGate();
+	hans.highFivesGuys();
+	return (0);	
+}

@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 16:29:33 by nick              #+#    #+#             */
-/*   Updated: 2025/04/17 16:55:31 by nick             ###   ########.fr       */
+/*   Updated: 2025/04/19 15:45:57 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {	
-	ClapTrap nick("nick");
+	ClapTrap sjoerd("sjoerd");
+	ScavTrap nick("nick");
+
+	sjoerd.attack("target");
+	nick.attack("target");
+	sjoerd.takeDamage(5);
 	nick.takeDamage(5);
-	for (int i = 0; i <= 10; i++)
-		nick.attack("bob");
+	nick.guardGate();
 	return (0);	
 }

@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 17:56:15 by nick              #+#    #+#             */
-/*   Updated: 2025/04/19 15:45:26 by nboer            ###   ########.fr       */
+/*   Created: 2025/04/19 14:43:54 by nboer             #+#    #+#             */
+/*   Updated: 2025/04/19 16:04:37 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 // constructor with name as parameter
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
-	std::cout << "Scavtrap " << name << " constructed" << std::endl;
-	this->_AttackDamage = 20;
-	this->_EnergyPoints = 50;
+FragTrap::FragTrap(std::string name) : ClapTrap(name){
+	this->_AttackDamage = 30;
+	this->_EnergyPoints = 100;
 	this->_Hitpoints = 100;
+	std::cout << "FragTrap " << this->_Name << " is constructed" << std::endl;
 }
 
 // copy constructor
-ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy){
+FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy){
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 	*this = copy;
 }
 
-// deconstructor
-ScavTrap::~ScavTrap() {
-	std::cout << "Scavtrap " << this->_Name << " deconstructed" << std::endl;
-}
-
 // assignation operator 
-ScavTrap &ScavTrap::operator=(const ScavTrap &src){
+FragTrap &FragTrap::operator=(const FragTrap &src){
 	std::cout << "ScavTrap Assignation operator called" << std::endl;
 	this->_Name = src._Name;
 	this->_EnergyPoints = src._EnergyPoints;
@@ -41,13 +36,17 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &src){
 	return *this;
 }
 
+// deconstructor
+FragTrap::~FragTrap(){
+	std::cout << "FragTrap " << this->_Name << " deconstructed" << std::endl;
+}
+
 // public functions
-void ScavTrap::attack(const std::string& target) {
-	std::cout << "Scavtrap " << this->_Name << " attacks " << target
+void FragTrap::attack(const std::string& target) {
+	std::cout << "FragTrap " << this->_Name << " attacks " << target
 			  << ", causing " << this->_AttackDamage << " points of damage!" << std::endl;
 }
 
-void ScavTrap::guardGate(){
-	std::cout << "Scavtrap " << this->_Name << " is now in Gate Keeper Mode" << std::endl;
+void FragTrap::highFivesGuys(){
+	std::cout << "LET'S DO A HIGH FIVE GUYS" << std::endl;
 }
-
