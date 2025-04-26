@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:42:03 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/19 17:57:37 by nboer            ###   ########.fr       */
+/*   Updated: 2025/04/26 14:00:29 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ class Animal{
 		Animal(const Animal &copy);
 		Animal &operator=(const Animal &src);
 		Animal(std::string type);
-		~Animal();
-		
+		virtual ~Animal();
+		virtual void makeSound() const;
+		std::string getType() const;
 };
 
 #endif

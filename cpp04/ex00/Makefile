@@ -6,12 +6,12 @@
 #    By: nboer <nboer@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 14:37:36 by nboer             #+#    #+#              #
-#    Updated: 2025/04/19 16:55:54 by nboer            ###   ########.fr        #
+#    Updated: 2025/04/26 14:21:26 by nboer            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = animal
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongDog.cpp WrongCat.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

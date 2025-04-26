@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongDog.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:55:11 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 13:57:14 by nboer            ###   ########.fr       */
+/*   Updated: 2025/04/26 14:17:59 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongDog.hpp"
 
 // constructor
-Dog::Dog() : Animal(){
-	std::cout << "Dog constructed" << std::endl;
-	this->_Type = "Dog";
+WrongDog::WrongDog() : WrongAnimal(){
+	std::cout << "WrongDog constructed" << std::endl;
+	this->_Type = "WrongDog";
 }
 
 // copy constructor
-Dog::Dog(const Dog &cpy) : Animal("Dog"){
+WrongDog::WrongDog(const WrongDog &cpy) : WrongAnimal("WrongDog"){
 	*this = cpy;
-	std::cout << "Dog copy constructor called" << std::endl;
+	std::cout << "WrongDog copy constructor called" << std::endl;
 }
 
 // assignation operator overload
-Dog &Dog::operator=(const Dog &src){
-	std::cout << "Dog Assignation operator called" << std::endl;
+WrongDog &WrongDog::operator=(const WrongDog &src){
+	std::cout << "WrongDog Assignation operator called" << std::endl;
 	this->_Type = src._Type;
 	return *this;
 }
 
 // deconstructor
-Dog::~Dog(){
-	std::cout << "Dog deconstructed" << std::endl;
+WrongDog::~WrongDog(){
+	std::cout << "WrongDog deconstructed" << std::endl;
 }
 
 // public methods
-void Dog::makeSound() const{
+void WrongDog::makeSound() const{
 	std::cout << "BARKY BARK BARK" << std::endl;
 }
 

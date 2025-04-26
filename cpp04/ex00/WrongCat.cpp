@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,35 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 // Constructor
-Cat::Cat(){
-	std::cout << "Cat constructed" << std::endl;
-	this->_Type = "Cat";
+WrongCat::WrongCat(){
+	std::cout << "WrongCat constructed" << std::endl;
+	this->_Type = "WrongCat";
 }
 
 // Copy Constructor
-Cat::Cat(const Cat &cpy) : Animal("Cat")
+WrongCat::WrongCat(const WrongCat &cpy) : WrongAnimal("WrongCat")
 {
 	*this = cpy;
-	std::cout << "Cat Copy Constructor called" << std::endl;
+	std::cout << "WrongCat Copy Constructor called" << std::endl;
 }
 
 // assignation operator overload
-Cat &Cat::operator=(const Cat &src)
+WrongCat &WrongCat::operator=(const WrongCat &src)
 {
-	std::cout << "Cat assignation operator called" << std::endl;
+	std::cout << "WrongCat assignation operator called" << std::endl;
 	this->_Type = src._Type;
 	return *this;
 }
 
 // Deconstructor
-Cat::~Cat(){
-	std::cout << "Cat deconstructed" << std::endl;
+WrongCat::~WrongCat(){
+	std::cout << "WrongCat deconstructed" << std::endl;
 }
 
 // public methods
-void Cat::makeSound() const {
+void WrongCat::makeSound() const {
 	std::cout << "MMMMMMIAUW" << std::endl;
 }

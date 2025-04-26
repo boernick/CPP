@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:41:42 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 14:23:04 by nboer            ###   ########.fr       */
+/*   Updated: 2025/04/26 14:23:18 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 // constructor
-Animal::Animal(){
-	std::cout << "Animal constructed" << std::endl;
-	this->_Type = "Generic Animal";
+WrongAnimal::WrongAnimal(){
+	std::cout << "WrongAnimal constructed" << std::endl;
+	this->_Type = "Generic WrongAnimal";
 }
 
 // constructor with type parameter
-Animal::Animal(std::string type){
-	std::cout << "Animal constructed of type: " << this->_Type << std::endl;
+WrongAnimal::WrongAnimal(std::string type){
+	std::cout << "WrongAnimal constructed of type: " << this->_Type << std::endl;
 	this->_Type = type;
 }
 
 // copy contructor
-Animal::Animal(const Animal &copy){
-	std::cout << "Animal copy constructor called" << std::endl;
+WrongAnimal::WrongAnimal(const WrongAnimal &copy){
+	std::cout << "WrongAnimal copy constructor called" << std::endl;
 	*this = copy;
 }
 
 // assignation operator
-Animal &Animal::operator=(const Animal &src)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->_Type = src._Type;
@@ -39,15 +39,15 @@ Animal &Animal::operator=(const Animal &src)
 }
 
 // deconstructor
-Animal::~Animal(){
-	std::cout << "Animal deconstructed" << std::endl;
+WrongAnimal::~WrongAnimal(){
+	std::cout << "WrongAnimal deconstructed" << std::endl;
 }
 
 // public methods
-void Animal::makeSound() const {
+void WrongAnimal::makeSound() const {
 	std::cout << "*Random screaming*" << std::endl;
 }
 
-std::string Animal::getType() const{
+std::string WrongAnimal::getType() const{
 	return this->_Type;
 }
