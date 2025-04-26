@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 16:54:35 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 16:00:52 by nboer            ###   ########.fr       */
+/*   Created: 2025/04/26 15:19:59 by nboer             #+#    #+#             */
+/*   Updated: 2025/04/26 15:41:06 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-#define CAT_H
+#ifndef BRAIN_H
+#define BRAIN_H
 
 #include <iostream>
-#include "Animal.hpp"
 
-class Cat : public Animal{
+struct Brain{
+	private:
+		std::string ideas[100];
 	public:
-		Cat();
-		~Cat();
-		Cat(const Cat &cpy);
-		Cat &Cat::operator=(const Cat &src);
-		std::string getType();
-		void makeSound() const;
+		Brain();
+		Brain (const Brain &cpy);
+		Brain &operator=(const Brain &src);
+		~Brain();
 };
 
 #endif
