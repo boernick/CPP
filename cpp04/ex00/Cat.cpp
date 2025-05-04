@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:57:01 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 13:38:49 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 17:10:44 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Constructor
 Cat::Cat(){
 	std::cout << "Cat constructed" << std::endl;
-	this->_Type = "Cat";
+	this->_type = "Cat";
 }
 
 // Copy Constructor
@@ -29,7 +29,7 @@ Cat::Cat(const Cat &cpy) : Animal("Cat")
 Cat &Cat::operator=(const Cat &src)
 {
 	std::cout << "Cat assignation operator called" << std::endl;
-	this->_Type = src._Type;
+	this->_type = src._type;
 	return *this;
 }
 

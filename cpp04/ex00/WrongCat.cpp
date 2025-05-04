@@ -15,7 +15,7 @@
 // Constructor
 WrongCat::WrongCat(){
 	std::cout << "WrongCat constructed" << std::endl;
-	this->_Type = "WrongCat";
+	this->_type = "WrongCat";
 }
 
 // Copy Constructor
@@ -29,7 +29,7 @@ WrongCat::WrongCat(const WrongCat &cpy) : WrongAnimal("WrongCat")
 WrongCat &WrongCat::operator=(const WrongCat &src)
 {
 	std::cout << "WrongCat assignation operator called" << std::endl;
-	this->_Type = src._Type;
+	this->_type = src._type;
 	return *this;
 }
 

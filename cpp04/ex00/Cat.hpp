@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:54:35 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 16:00:52 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 16:04:52 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cat : public Animal{
 		Cat();
 		~Cat();
 		Cat(const Cat &cpy);
-		Cat &Cat::operator=(const Cat &src);
+		Cat &operator=(const Cat &src);
 		std::string getType();
 		void makeSound() const;
 };
