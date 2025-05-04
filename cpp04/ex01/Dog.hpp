@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:54:35 by nboer             #+#    #+#             */
-/*   Updated: 2025/05/04 16:14:37 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 17:41:08 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@
 
 class Dog : public Animal {
 	private:
-		Brain *_Brain;
+		Brain *_brain;
 	public:
 		Dog();
 		~Dog();
 		Dog(const Dog &cpy);
 		Dog &operator=(const Dog &src);
 		void makeSound() const;
+		Brain* getBrain() const;		
 };
 
 #endif

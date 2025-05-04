@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:41:42 by nboer             #+#    #+#             */
-/*   Updated: 2025/05/04 16:20:07 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 18:19:12 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,10 @@ Animal::Animal(){
 	this->_type = "Generic Animal";
 }
 
-// constructor with type parameter
-Animal::Animal(std::string type){
-	std::cout << "Animal constructed of type: " << this->_type << std::endl;
-	this->_type = type;
-}
-
 // copy contructor
-Animal::Animal(const Animal &copy){
+Animal::Animal(const Animal &src){
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = copy;
+	this->_type = src._type;
 }
 
 // assignation operator
