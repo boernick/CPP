@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 15:19:59 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 15:41:06 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 17:05:21 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 
 #include <iostream>
 
-struct Brain{
+class Brain{
 	private:
-		std::string ideas[100];
+		std::string _ideas[100];
 	public:
 		Brain();
 		Brain (const Brain &cpy);
 		Brain &operator=(const Brain &src);
 		~Brain();
+		std::string getIdea(int i) const;
+		void setIdea(int i, std::string str);
 };
 
 #endif

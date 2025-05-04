@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:54:35 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 15:47:30 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 16:14:37 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Dog : public Animal {
 	private:
-		Brain _Brain;
+		Brain *_Brain;
 	public:
 		Dog();
 		~Dog();

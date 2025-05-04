@@ -6,12 +6,12 @@
 #    By: nboer <nboer@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 14:37:36 by nboer             #+#    #+#              #
-#    Updated: 2025/04/26 15:10:21 by nboer            ###   ########.fr        #
+#    Updated: 2025/05/04 17:14:17 by nboer            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = animal
-SRC = main.cpp Animal.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Dog.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -33,4 +33,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-

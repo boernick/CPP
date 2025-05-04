@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:54:35 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 16:20:05 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 16:16:02 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Brain;
 
 class Cat : public Animal{
 	private:
-		Brain *_Brain;
+		Brain *_brain;
 	public:
 		Cat();
 		~Cat();

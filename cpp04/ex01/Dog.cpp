@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:55:11 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 13:57:14 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 16:21:26 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 // constructor
 Dog::Dog() : Animal(){
 	std::cout << "Dog constructed" << std::endl;
-	this->_Type = "Dog";
+	this->_type = "Dog";
+	this->_Brain = new Brain;
 }
 
 // copy constructor
@@ -27,12 +28,13 @@ Dog::Dog(const Dog &cpy) : Animal("Dog"){
 // assignation operator overload
 Dog &Dog::operator=(const Dog &src){
 	std::cout << "Dog Assignation operator called" << std::endl;
-	this->_Type = src._Type;
+	this->_type = src._type;
 	return *this;
 }
 
 // deconstructor
 Dog::~Dog(){
+	delete this->_Brain;
 	std::cout << "Dog deconstructed" << std::endl;
 }
 

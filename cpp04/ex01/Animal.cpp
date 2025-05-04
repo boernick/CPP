@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:41:42 by nboer             #+#    #+#             */
-/*   Updated: 2025/04/26 14:23:04 by nboer            ###   ########.fr       */
+/*   Updated: 2025/05/04 16:20:07 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 // constructor
 Animal::Animal(){
 	std::cout << "Animal constructed" << std::endl;
-	this->_Type = "Generic Animal";
+	this->_type = "Generic Animal";
 }
 
 // constructor with type parameter
 Animal::Animal(std::string type){
-	std::cout << "Animal constructed of type: " << this->_Type << std::endl;
-	this->_Type = type;
+	std::cout << "Animal constructed of type: " << this->_type << std::endl;
+	this->_type = type;
 }
 
 // copy contructor
@@ -34,7 +34,7 @@ Animal::Animal(const Animal &copy){
 Animal &Animal::operator=(const Animal &src)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->_Type = src._Type;
+	this->_type = src._type;
 	return *this;
 }
 
@@ -49,5 +49,5 @@ void Animal::makeSound() const {
 }
 
 std::string Animal::getType() const{
-	return this->_Type;
+	return this->_type;
 }
