@@ -6,11 +6,11 @@
 #    By: nboer <nboer@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 14:37:36 by nboer             #+#    #+#              #
-#    Updated: 2025/07/05 16:30:38 by nboer            ###   ########.fr        #
+#    Updated: 2025/07/05 18:53:34 by nboer            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME = AAnimal
 SRC = main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
