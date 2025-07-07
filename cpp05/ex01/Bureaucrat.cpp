@@ -6,18 +6,11 @@
 /*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:15:36 by nick              #+#    #+#             */
-/*   Updated: 2025/07/07 22:18:33 by nick             ###   ########.fr       */
+/*   Updated: 2025/07/07 23:21:13 by nick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-
-//to do
-// remove try catch and place in main
-// build exception classes
-// operator overload
-
 
 Bureaucrat::Bureaucrat(std::string Name, int Grade) : name(Name), grade(Grade) {
 	std::cout << "constructor called for " << this->name << std::endl;
