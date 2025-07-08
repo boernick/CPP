@@ -6,7 +6,7 @@
 /*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:13:16 by nick              #+#    #+#             */
-/*   Updated: 2025/07/07 23:20:45 by nick             ###   ########.fr       */
+/*   Updated: 2025/07/08 22:58:42 by nick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,16 @@
 
 class Bureaucrat{
 	private:
-		const std::string name;
-		int grade;
+		const std::string _name;
+		int _grade;
 	public:
+		class GradeTooHighExeption : public std::exception {
+		public:
+			
+		}
+	
 		Bureaucrat();
+		Bureaucrat(Bureaucrat& const ref);
 		Bureaucrat(std::string Name, int Grade);
 		~Bureaucrat();
 		Bureaucrat &operator=(Bureaucrat const &src);
@@ -31,9 +37,6 @@ class Bureaucrat{
 		void incGrade();
 		void decGrade();
 
-class GradeTooHighExeption{
-	public:
-}
 };
 
 

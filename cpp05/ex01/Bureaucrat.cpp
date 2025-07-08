@@ -6,22 +6,21 @@
 /*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:15:36 by nick              #+#    #+#             */
-/*   Updated: 2025/07/07 23:21:13 by nick             ###   ########.fr       */
+/*   Updated: 2025/07/08 20:09:47 by nick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string Name, int Grade) : name(Name), grade(Grade) {
-	std::cout << "constructor called for " << this->name << std::endl;
-	checkBounds(grade);
+
+Bureaucrat::Bureaucrat() : _name(""), _grade(150) {
+	std::cout << "constructor called" << std::endl;
 }
 
-void Bureaucrat::checkBounds(int Grade){
-	if (grade < 1)
-		throw GradeTooHighException();
-	if (grade > 150)
-		throw GradeTooLowException();
+Bureaucrat::Bureaucrat(const std::string Name, const int Grade) throw(GradeTooLowException, GradeTooHighExeption){ }
+
+Bureaucrat::Bureaucrat(Bureaucrat& const ref) : _name(ref._name), _grade(ref._grade) {
+	std::cout << "copy constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){
@@ -29,19 +28,17 @@ Bureaucrat::~Bureaucrat(){
 }
 
 const std::string& Bureaucrat::getName() const{
-	return this->name;
+	return this->_name;
 }
 
 int Bureaucrat::getGrade() const {
-	return this->grade;
+	return this->_grade;
 }
 
 void Bureaucrat::incGrade(){
-	grade -= 1;
-	checkBounds(grade);
+	_grade -= 1;
 }
 
 void Bureaucrat::decGrade(){
-	grade += 1;
-	checkBounds(grade);
+	_grade += 1;
 }
