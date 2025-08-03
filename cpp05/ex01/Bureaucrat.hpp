@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:13:16 by nick              #+#    #+#             */
-/*   Updated: 2025/07/11 21:28:24 by nick             ###   ########.fr       */
+/*   Updated: 2025/08/03 17:47:09 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Bureaucrat{
 		const std::string _name;
 		int _grade;
 	public:
-		class GradeTooHighExeption : public std::exception {
+		class GradeTooHighException : public std::exception {
 		public:
 			virtual const char* what() const throw();
 		};
@@ -30,18 +30,16 @@ class Bureaucrat{
 		};
 	
 		Bureaucrat();
-		Bureaucrat(Bureaucrat const &ref);
-		Bureaucrat(std::string Name, int Grade) throw(GradeTooHighExeption, GradetooLowException);
+		Bureaucrat(Bureaucrat const &b);
+		Bureaucrat(std::string Name, int Grade) throw(GradeTooHighException, GradeTooLowException);
 		~Bureaucrat();
 		Bureaucrat &operator=(Bureaucrat const &src);
-		Bureaucrat(Bureaucrat const &b);
-		
 		const std::string& getName() const;
 		int getGrade() const;
 		void incGrade() throw(GradeTooHighException);
 		void decGrade() throw(GradeTooLowException);
-
 };
 
+std::ostream& operator<<(std::ostream &out, const Bureaucrat &b);
 
 #endif

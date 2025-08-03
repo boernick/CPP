@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:20:15 by nick              #+#    #+#             */
-/*   Updated: 2025/07/07 22:18:17 by nick             ###   ########.fr       */
+/*   Updated: 2025/08/03 17:47:52 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,41 @@
 
 int main(void)
 {
-	const Bureaucrat* B1 = new Bureaucrat("Hans"); 
+	Bureaucrat a;
+	Bureaucrat b("Hans", 149);
+	Bureaucrat c("Wim", 2);
 	
-	try
-	{
-	}
-	catch (std::exception & e)
-	{
+	try{
+		c.incGrade();
+		std::cout << c << std::endl;
+		c.incGrade();
+	}	catch (std::exception &e){
+		std::cout << "Exception: " << e.what() << std::endl;
 	}
 	
-	std::cout << B1->getName() << std::endl; 
-	std::cout << B1->getGrade() << std::endl;
+	try{
+		b.decGrade();
+		std::cout << b << std::endl;
+		b.decGrade();
+	}	catch (std::exception &e){
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+
+	try {
+		Bureaucrat d("Joep", 151);
+	} catch (std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+	try {
+		Bureaucrat e("Piet", 0);
+	} catch (std::exception &e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+	
+	std::cout << a << std::endl;
+	std::cout << c << std::endl;
+	a = c;
+	std::cout << a << std::endl;
 	
 	return 0;
 }
