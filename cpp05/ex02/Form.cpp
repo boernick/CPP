@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 11:18:51 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/07 14:45:10 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/07 19:16:52 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,8 @@ const char* Form::GradeTooLowException::what() const throw() {
 	return ("Grade is too low");
 }
 
-
+std::ostream &operator<<(std::ostream& os, const Form& f) {
+	os << f.getName() << ", exec grade " << f.getExGrade()  << ", sign grade " 
+		<< f.getSignGrade() << ", signed " << (f.getSign()?"yes":"no");
+	return os;
+}

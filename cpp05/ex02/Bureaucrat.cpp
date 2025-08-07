@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:15:36 by nick              #+#    #+#             */
-/*   Updated: 2025/08/07 15:14:33 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/07 19:01:08 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,17 @@ int Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::signForm(Form &f) const {
-	
+	try
+	{
+		f.beSigned(*this);
+		std::cout << _name << " signed " << f.getName() << "." << std::endl;
+	}
+	catch (Form::GradeTooLowException e)
+	{
+		std::cout << _name << " couldn't sign " << f.getName() 
+			<< " because their grade is too low" << std::endl;
+	}
 }
-
 
 void Bureaucrat::incGrade() throw(GradeTooHighException){
 	if (_grade == 1)

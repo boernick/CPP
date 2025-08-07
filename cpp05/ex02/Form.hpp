@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 11:18:54 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/07 14:03:46 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/07 19:07:00 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ class Form{
 		void decGrade();		
 };
 
-std::ostream& operator<<(std::ostream &out, const Bureaucrat &b);
+std::ostream& operator<<(std::ostream &out, const Form &f);
 
 #endif
