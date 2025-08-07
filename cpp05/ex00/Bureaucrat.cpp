@@ -6,12 +6,11 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:15:36 by nick              #+#    #+#             */
-/*   Updated: 2025/08/07 19:01:08 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/03 17:47:21 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name(""), _grade(150) {
 	std::cout << "constructor called" << std::endl;
@@ -44,19 +43,6 @@ const std::string& Bureaucrat::getName() const{
 
 int Bureaucrat::getGrade() const {
 	return this->_grade;
-}
-
-void Bureaucrat::signForm(Form &f) const {
-	try
-	{
-		f.beSigned(*this);
-		std::cout << _name << " signed " << f.getName() << "." << std::endl;
-	}
-	catch (Form::GradeTooLowException e)
-	{
-		std::cout << _name << " couldn't sign " << f.getName() 
-			<< " because their grade is too low" << std::endl;
-	}
 }
 
 void Bureaucrat::incGrade() throw(GradeTooHighException){

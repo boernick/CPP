@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nick <nick@student.42.fr>                  +#+  +:+       +#+         #
+#    By: nboer <nboer@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/13 14:37:36 by nboer             #+#    #+#              #
-#    Updated: 2025/07/06 19:08:11 by nick             ###   ########.fr        #
+#    Created: 2025/08/07 11:19:33 by nboer             #+#    #+#              #
+#    Updated: 2025/08/07 14:45:32 by nboer            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
-SRC = main.cpp Bureaucrat.cpp
+NAME = form
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
