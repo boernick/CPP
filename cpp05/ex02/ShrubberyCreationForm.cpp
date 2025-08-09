@@ -1,29 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 19:20:15 by nick              #+#    #+#             */
-/*   Updated: 2025/08/09 13:07:50 by nboer            ###   ########.fr       */
+/*   Created: 2025/08/09 13:45:51 by nboer             #+#    #+#             */
+/*   Updated: 2025/08/09 13:45:52 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
-
-int main(void)
-{
-	Bureaucrat a("Hans", 40);
-	Bureaucrat b("Piet", 50);
-	
-	Form x;
-	Form y("Submission Form", 45, 45);
-	
-	std::cout << x << std::endl;
-	std::cout << y << std::endl;
-	
-	a.signForm(y);
-	b.signForm(y);
-}

@@ -6,15 +6,15 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:15:36 by nick              #+#    #+#             */
-/*   Updated: 2025/08/09 13:14:02 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/09 13:56:36 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name(""), _grade(150) {
-	std::cout << "Bureaucrat constructor called" << std::endl;
+	std::cout << "constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string Name, const int Grade) : _name(Name), _grade(Grade){ 
@@ -25,11 +25,11 @@ Bureaucrat::Bureaucrat(const std::string Name, const int Grade) : _name(Name), _
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &ref) : _name(ref._name), _grade(ref._grade) {
-	std::cout << "Bureaucrat copy constructor called" << std::endl;
+	std::cout << "copy constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){
-	std::cout << "Bureaucrat deconstructor called" << std::endl;
+	std::cout << "deconstructor called" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src) {
@@ -46,13 +46,13 @@ int Bureaucrat::getGrade() const {
 	return this->_grade;
 }
 
-void Bureaucrat::signForm(Form &f) const {
+void Bureaucrat::signForm(AForm &f) const {
 	try
 	{
 		f.beSigned(*this);
 		std::cout << _name << " signed " << f.getName() << "." << std::endl;
 	}
-	catch (Form::GradeTooLowException e)
+	catch (AForm::GradeTooLowException e)
 	{
 		std::cout << _name << " couldn't sign " << f.getName() 
 			<< " because their grade is too low." << std::endl;
@@ -71,6 +71,11 @@ void Bureaucrat::decGrade() {
 		throw GradeTooLowException();
 	_grade += 1;
 }
+
+void Bureaucrat::executeForm(AForm const &form){
+	
+}
+
 
 std::ostream &operator<<(std::ostream& os, const Bureaucrat& b) {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade(); 

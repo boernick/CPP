@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:13:16 by nick              #+#    #+#             */
-/*   Updated: 2025/08/09 11:54:27 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/09 13:43:23 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat{
 	private:
@@ -38,9 +38,10 @@ class Bureaucrat{
 		Bureaucrat &operator=(Bureaucrat const &src);
 		const std::string& getName() const;
 		int getGrade() const;
-		void signForm(Form &f) const;
+		void signForm(AForm &f) const;
 		void incGrade();
 		void decGrade();
+		void executeForm(AForm const &form)
 };
 
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &b);

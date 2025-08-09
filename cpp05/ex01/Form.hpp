@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 11:18:54 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/07 19:07:00 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/09 11:54:33 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define FORM_H
 
 #include <iostream>
-#include <Bureaucrat.hpp>
+
+class Bureaucrat;
 
 class Form{
 	private:
@@ -38,12 +39,10 @@ class Form{
 		~Form();
 		Form &operator=(Form const &src);
 		const std::string& getName() const;
-		const int getSignGrade() const;
-		const int getExGrade() const;
+		int getSignGrade() const;
+		int getExGrade() const;
 		bool getSign() const;
-		void beSigned(Bureaucrat const &b);
-		void incGrade();
-		void decGrade();		
+		void beSigned(Bureaucrat const &b);		
 };
 
 std::ostream& operator<<(std::ostream &out, const Form &f);
