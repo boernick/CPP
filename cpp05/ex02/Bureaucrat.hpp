@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:13:16 by nick              #+#    #+#             */
-/*   Updated: 2025/08/09 13:43:23 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/10 16:14:43 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Bureaucrat{
 		void signForm(AForm &f) const;
 		void incGrade();
 		void decGrade();
-		void executeForm(AForm const &form)
+		void executeForm(AForm const &form);
 };
 
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &b);

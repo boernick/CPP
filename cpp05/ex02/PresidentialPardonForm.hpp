@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 13:45:51 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/09 16:12:33 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/10 16:39:28 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ class PresidentialPardonForm : public AForm{
 
 		std::string getTarget() const;
 		void execute(Bureaucrat const & executor) const;
-}
+};
 
 #endif

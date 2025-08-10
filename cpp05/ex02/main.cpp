@@ -6,21 +6,24 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:20:15 by nick              #+#    #+#             */
-/*   Updated: 2025/08/09 13:15:35 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/10 17:10:26 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
-	Bureaucrat a("Hans", 40);
-	Bureaucrat b("Piet", 50);
+	Bureaucrat a("Hans", 15);
+	Bureaucrat b("Piet", 30);
 	
-	AForm x;
-	AForm y("Submission Form", 45, 45);
-	
+	PresidentialPardonForm x;
+	PresidentialPardonForm y("huis");
+		
 	std::cout << x << std::endl;
 	std::cout << y << std::endl;
 	

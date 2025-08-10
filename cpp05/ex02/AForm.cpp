@@ -66,12 +66,20 @@ void AForm::beSigned(Bureaucrat const &b) {
 		_sign = true;
 }
 
+void AForm::setSign(bool value) {
+	_sign = value;
+}
+
 const char* AForm::GradeTooHighException::what() const throw() {
 	return ("Grade is too high");
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
 	return ("Grade is too low");
+}
+
+const char* AForm::FormNotSignedException::what() const throw() {
+	return ("Form is not signed");
 }
 
 std::ostream &operator<<(std::ostream& os, const AForm& f) {

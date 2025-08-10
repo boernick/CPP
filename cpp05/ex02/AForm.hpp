@@ -32,6 +32,10 @@ class AForm{
 		public:
 			virtual const char* what() const throw();
 		};
+		class FormNotSignedException : public std::exception {
+		public:
+			virtual const char* what() const throw();
+		};
 		
 		AForm();
 		AForm(AForm const &f);
@@ -45,7 +49,7 @@ class AForm{
 		void beSigned(Bureaucrat const &b);
 		virtual void execute(Bureaucrat const & executor) const = 0;
 	protected:
-		//issigned: refresh memory on the difference between protected/private/public
+		void setSign(bool value);
 };
 
 std::ostream& operator<<(std::ostream &out, const AForm &f);

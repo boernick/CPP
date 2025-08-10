@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:15:36 by nick              #+#    #+#             */
-/*   Updated: 2025/08/09 13:56:36 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/10 16:38:49 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,19 @@ void Bureaucrat::decGrade() {
 }
 
 void Bureaucrat::executeForm(AForm const &form){
-	
+	try {
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (AForm::GradeTooLowException &e) {
+		std::cout << _name << " was unable to execute " << form.getName()
+		<< "because the grade is too low." << std::endl;
+	}
+	catch (AForm::FormNotSignedException &e) {
+		std::cout << _name << " was unable to execute " << form.getName()
+		<< "because the form is not signed." << std::endl;
+	}
 }
-
 
 std::ostream &operator<<(std::ostream& os, const Bureaucrat& b) {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade(); 
