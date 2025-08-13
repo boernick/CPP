@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:20:15 by nick              #+#    #+#             */
-/*   Updated: 2025/08/10 17:10:26 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/13 21:56:50 by nick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,24 @@
 
 int main(void)
 {
-	Bureaucrat a("Hans", 15);
+	Bureaucrat a("Hans", 140);
 	Bureaucrat b("Piet", 30);
+	Bureaucrat c("Joep", 10);
+	Bureaucrat d("Geert", 1);
+
+	PresidentialPardonForm x("huis");
 	
-	PresidentialPardonForm x;
-	PresidentialPardonForm y("huis");
+	a.signForm(x);
+	d.signForm(x);
+	d.executeForm(x);
+	
 		
+	RobotomyRequestForm y("lab");
+	
+	
+	ShrubberyCreationForm z("jungle");
+	
 	std::cout << x << std::endl;
 	std::cout << y << std::endl;
-	
-	a.signForm(y);
-	b.signForm(y);
+	std::cout << z << std::endl;
 }

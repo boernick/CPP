@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 13:45:51 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/10 18:06:11 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/13 21:48:33 by nick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (outfile.fail())
 		std::cout << "error while opening outfile." << std::endl;
 	else
+	{
 		outfile << "    /\\    \n";
 		outfile << "   /  \\   \n";
 		outfile << "  /    \\  \n";
@@ -62,3 +63,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		outfile << "    ||    \n";
 		outfile.close();
 	}
+}
