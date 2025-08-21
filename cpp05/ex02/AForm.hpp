@@ -40,7 +40,7 @@ class AForm{
 		AForm();
 		AForm(AForm const &f);
 		AForm(std::string name, const int sign_grade, const int exec_grade);
-		~AForm();
+		virtual ~AForm();
 		AForm &operator=(AForm const &src);
 		const std::string& getName() const;
 		int getSignGrade() const;

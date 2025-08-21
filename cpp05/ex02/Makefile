@@ -3,15 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nick <nick@student.42.fr>                  +#+  +:+       +#+         #
+#    By: nboer <nboer@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/07 11:19:33 by nboer             #+#    #+#              #
-#    Updated: 2025/08/13 21:43:56 by nick             ###   ########.fr        #
+#    Updated: 2025/08/21 12:17:57 by nboer            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = form
-SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp \
+	Bureaucrat.cpp \
+	AForm.cpp \
+	PresidentialPardonForm.cpp \
+	RobotomyRequestForm.cpp \
+	ShrubberyCreationForm.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

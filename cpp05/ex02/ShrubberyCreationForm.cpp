@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 13:45:51 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/13 21:48:33 by nick             ###   ########.fr       */
+/*   Updated: 2025/08/21 11:49:53 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-const std::string ShrubberyCreationForm::_FORM_NAME = "Robotomy request form";
+const std::string ShrubberyCreationForm::_FORM_NAME = "Shrubbery Creation form";
 const int ShrubberyCreationForm::_SIGN_GRADE = 145;
 const int ShrubberyCreationForm::_EXEC_GRADE = 137;
 
