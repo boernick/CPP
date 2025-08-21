@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:20:15 by nick              #+#    #+#             */
-/*   Updated: 2025/08/13 21:56:50 by nick             ###   ########.fr       */
+/*   Updated: 2025/08/21 10:36:06 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 int main(void)
 {
+	srand(time(NULL));
+
 	Bureaucrat a("Hans", 140);
 	Bureaucrat b("Piet", 30);
 	Bureaucrat c("Joep", 10);
@@ -29,9 +31,10 @@ int main(void)
 	d.signForm(x);
 	d.executeForm(x);
 	
-		
 	RobotomyRequestForm y("lab");
-	
+	a.signForm(y);
+	c.signForm(y);
+	d.executeForm(y);
 	
 	ShrubberyCreationForm z("jungle");
 	

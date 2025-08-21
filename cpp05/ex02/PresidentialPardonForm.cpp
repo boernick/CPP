@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 13:45:51 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/10 17:03:15 by nboer            ###   ########.fr       */
+/*   Updated: 2025/08/21 10:26:52 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 		throw AForm::FormNotSignedException();
 	if (executor.getGrade() > getExGrade())
 		throw AForm::GradeTooLowException();
-	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox.";
+	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

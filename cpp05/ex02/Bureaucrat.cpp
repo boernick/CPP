@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:15:36 by nick              #+#    #+#             */
-/*   Updated: 2025/08/13 21:38:49 by nick             ###   ########.fr       */
+/*   Updated: 2025/08/21 10:32:51 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name(""), _grade(150) {
-	std::cout << "constructor called" << std::endl;
+	std::cout << "Bureaucrat constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string Name, const int Grade) : _name(Name), _grade(Grade){ 
@@ -25,11 +25,11 @@ Bureaucrat::Bureaucrat(const std::string Name, const int Grade) : _name(Name), _
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &ref) : _name(ref._name), _grade(ref._grade) {
-	std::cout << "copy constructor called" << std::endl;
+	std::cout << "Bureaucrat copy constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){
-	std::cout << "deconstructor called" << std::endl;
+	std::cout << "Bureaucrat deconstructor called" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src) {
