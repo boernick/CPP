@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/23 13:42:00 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/24 17:09:36 by nboer            ###   ########.fr       */
+/*   Created: 2025/08/24 12:02:03 by nboer             #+#    #+#             */
+/*   Updated: 2025/08/24 12:28:46 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _SCALAR_CONVERTER_H
-#define _SCALAR_CONVERTER_H
+#include <ScalarConverter.hpp>
 
-#include <iostream>
-#include <cstdlib>
-#include <limits>
-#include "ScalarTypes.hpp"
-
-class ScalarConverter{
-	private:
-		ScalarConverter();
-		~ScalarConverter();
-	public:
-		class ConversionFailedException : public std::exception {
-		public:
-			virtual const char* what() const throw();
-		};
-		static void convert(std::string str);
+int main(int argc, char *argv[])
+{
+	if (argc > 1)
+		ScalarConverter::convert(argv[1]);
 }
-
-#endif

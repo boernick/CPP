@@ -1,0 +1,43 @@
+___________________________________________________________________________
+LESSONS:
+
+In the constructor you initialize all the private variables to zero.
+ScalarTypes::Scalartypes()
+	: _chr(0), _integer(0), _dbl(0.0), _flt(0.0f) {}
+THIS is because, if you don't explicitly initialize class members, they start with indeterminate garbage values. Setting them to 0 guarantees a known safe state, when you start using setters and getters.
+
+____________________________________________________________________________
+
+ScalarTypes::ScalarTypes(const ScalarTypes &other) :
+_chr(other._chr), _int(other._int), _dbl(other._dbl), _flt(other._flt) {}
+
+ScalarTypes &ScalarTypes::operator=(const ScalarTypes &other){
+	if (this != &other) {
+		this->_chr = other._chr;
+		this->_int = other._int;
+		this->_dbl = other._dbl;
+		this->_flt = other._flt;
+	}
+	return (*this);
+}
+
+The difference between the assignment operator and the copy constructor:
+- the copy constructor constructs and assigns at the same time -> therefore
+	it uses initializer list, because members don't exist yet.
+- the assignment operator copies into something that already exists.
+	uses = inside function body, because members already exist and just need an update.
+
+IMPORTANT: the difference is wether the member in which you are COPYING INTO exists or not. examples:
+ScalarTypes c = a;  // copy constructor because c does not exist yet before this line.
+a = b // assignment operator because the two instances have already been constructed
+
+____________________________________________________________________________
+
+strtol is a C standard library function (from <cstdlib>).
+
+Like most old C functions, it does not know what std::string is, it only works with null-terminated C strings (const char*).
+
+Therefore you need c_str = str.c_str() to input as parameter into the strtol(). Long can handle bigger ranges than int and therefor reduces overflow risk.
+The long is just a safe intermediate type big enough to catch larger values before narrowing to int.
+
+_______________________________________________________________________________
