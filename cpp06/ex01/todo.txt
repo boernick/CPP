@@ -1,6 +1,5 @@
-
-________________________________________________________________________________
-LESSONS
+___________________________________________________________________________
+LESSONS:
 
 an uintptr_t is an unsigned integer type guaranteed to be large enough to store a pointer.
 On a 32-bit machine, it’s 32 bits. On a 64-bit machine, it’s 64 bits.
