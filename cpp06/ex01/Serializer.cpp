@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/23 13:42:00 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/24 17:09:36 by nboer            ###   ########.fr       */
+/*   Created: 2025/08/28 16:17:55 by nboer             #+#    #+#             */
+/*   Updated: 2025/08/28 18:01:18 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _SCALAR_CONVERTER_H
-#define _SCALAR_CONVERTER_H
+#include "Serializer.hpp"
 
-#include <iostream>
-#include <cstdlib>
-#include <limits>
-#include "ScalarTypes.hpp"
-
-class ScalarConverter{
-	private:
-		ScalarConverter();
-		~ScalarConverter();
-	public:
-		class ConversionFailedException : public std::exception {
-		public:
-			virtual const char* what() const throw();
-		};
-		static void convert(std::string str);
+uintptr_t Serializer::serialize(Data* ptr) {
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-#endif
+Data* Serializer::deserialize(uintptr_t raw) {
+	return (reinterpret_cast<Data*>(raw));
+}
