@@ -1,0 +1,32 @@
+___________________________________________________________________________
+LESSONS:
+
+1. dynamic_cast with pointers
+A* a = dynamic_cast<A*>(p);
+
+If the cast succeeds, you get a valid pointer. 
+If the cast fails, it returns nullptr.
+That’s why in your identify(Base* p) you can just do:
+
+if (dynamic_cast<A*>(p)) std::cout << "A\n";
+
+2. dynamic_cast with references
+A& a = dynamic_cast<A&>(p);
+
+If the cast succeeds, you get a valid reference.
+If the cast fails, it cannot return “null reference” (because references must always bind to a real object).
+Instead, it throws an exception: std::bad_cast.
+
+That’s why in your identify(Base& p) you had to wrap each attempt in a try/catch
+
+SUMMARY:
+identify(Base* p) → check for nullptr.
+identify(Base& p) → catch exceptions.
+
+Both achieve the same goal: figure out the true derived type of the Base object.
+___________________________________________________________________________
+
+Base has a virtual ~Base(). 
+That makes all derived destructors virtual (even if compiler-generated).
+A, B, C don’t need explicit destructors because they don’t manage resources.
+___________________________________________________________________________
