@@ -1,0 +1,18 @@
+___________________________________________________________________________
+LESSONS:
+
+For a class, you need to overload the subscript operator [] for your Array class 
+because it is not a built-in feature for custom classes. 
+The operator is only natively available for C-style arrays (int arr[10];).
+
+Overloading the operator allows you to define its behavior for your class, making 
+it possible to access elements using the familiar myArray[index] syntax. 
+This improves the usability and readability of your Array class, 
+making it behave similarly to a built-in array while also allowing 
+you to add custom logic, such as bounds checking.
+
+Without overloading [], a call like myArray[0] would be a compiler error. 
+Overloading it lets you control what happens when that syntax is used.
+___________________________________________________________________________
+
+
