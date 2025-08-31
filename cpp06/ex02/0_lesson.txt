@@ -8,7 +8,8 @@ If the cast succeeds, you get a valid pointer.
 If the cast fails, it returns nullptr.
 That’s why in your identify(Base* p) you can just do:
 
-if (dynamic_cast<A*>(p)) std::cout << "A\n";
+if (dynamic_cast<A*>(p)) 
+	std::cout << "A\n";
 
 2. dynamic_cast with references
 A& a = dynamic_cast<A&>(p);
