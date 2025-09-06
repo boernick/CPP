@@ -1,0 +1,22 @@
+___________________________________________________________________________
+LESSONS:
+
+Think of a container as a data structure that stores a collection of elements.
+The C++ Standard Library (STL) gives you many ready-made containers:
+
+std::vector<int> → dynamic array (like an int[] that can grow/shrink).
+std::list<int> → doubly linked list.
+std::deque<int> → double-ended queue.
+std::set<int> → sorted unique elements.
+std::map<Key, Value> → dictionary / associative array.
+
+but how do we look inside these containers?
+Every STL container provides iterators: objects that act like pointers to the elements inside.
+
+container.begin() → iterator pointing to the first element.
+container.end() → iterator pointing just past the last element.
+
+👉 You move an iterator forward using it++, and you access the value with *it.
+___________________________________________________________________________
+
+

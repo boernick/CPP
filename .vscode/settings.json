@@ -53,6 +53,7 @@
 		"sstream": "cpp",
 		"newzombie": "cpp",
 		"fstream": "cpp",
-		"harl.hpp": "c"
+		"harl.hpp": "c",
+		"list": "cpp"
 	}
 }
