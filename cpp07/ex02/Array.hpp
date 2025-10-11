@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 18:17:54 by nboer             #+#    #+#             */
-/*   Updated: 2025/08/31 15:29:06 by nboer            ###   ########.fr       */
+/*   Updated: 2025/10/11 17:11:31 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,17 @@ class Array {
 			return *this;
 		}
 
-		T &operator[](unsigned int i) const {
+		const T &operator[](unsigned int i) const {
 		if (i >= _n)
 			throw OutsideBoundsException();
 		return _array[i];
-	}
+		}
+		
+		T &operator[](unsigned int i) {
+		if (i >= _n)
+			throw OutsideBoundsException();
+		return _array[i];
+		}
 		
 		unsigned int size() const {
 			return _n;
