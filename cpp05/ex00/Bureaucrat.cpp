@@ -6,7 +6,7 @@
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:15:36 by nick              #+#    #+#             */
-/*   Updated: 2025/08/03 17:47:21 by nboer            ###   ########.fr       */
+/*   Updated: 2025/10/24 17:20:31 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Bureaucrat::Bureaucrat() : _name(""), _grade(150) {
 	std::cout << "constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string Name, const int Grade) throw(GradeTooLowException, GradeTooHighException) : _name(Name), _grade(Grade){
+Bureaucrat::Bureaucrat(const std::string Name, const int Grade) : _name(Name), _grade(Grade) {
 	if (_grade < 1)
 		throw GradeTooHighException();
 	if (_grade > 150)
@@ -37,7 +37,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src) {
 	return *this;
 }
 
-const std::string& Bureaucrat::getName() const{
+const std::string& Bureaucrat::getName() const {
 	return this->_name;
 }
 
@@ -45,14 +45,14 @@ int Bureaucrat::getGrade() const {
 	return this->_grade;
 }
 
-void Bureaucrat::incGrade() throw(GradeTooHighException){
+void Bureaucrat::incGrade() {
 	if (_grade == 1)
 		throw GradeTooHighException();
 	_grade -= 1;
 	
 }
 
-void Bureaucrat::decGrade() throw(GradeTooLowException){
+void Bureaucrat::decGrade() {
 	if (_grade == 150)
 		throw GradeTooLowException();
 	_grade += 1;
