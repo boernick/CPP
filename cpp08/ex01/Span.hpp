@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nick <nick@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 13:29:09 by nick              #+#    #+#             */
-/*   Updated: 2025/09/07 15:01:30 by nick             ###   ########.fr       */
+/*   Updated: 2025/10/29 16:35:41 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_H
-#define SPAN_h
+#pragma once
 
 #include <iostream>
 #include <stdexcept>
 #include <vector>
+#include <cmath>
+#include <algorithm>
+#include <iterator>
 #include <limits>
-
 
 class Span {
 	private:
 		unsigned int		_maxsize;
+		unsigned int		_size;
 		std::vector<int>	_numbers;
 	public:
 		class NumberLimitException : public std::exception {
@@ -35,10 +37,18 @@ class Span {
 		Span();
 		Span(unsigned int N);
 		Span(const Span &src);
+		Span &operator=(const Span &src);
 		~Span();
 		void addNumber(int num);
 		int shortestSpan();
 		int longestSpan();
+		unsigned int size() const;
+		
+		template <typename T>
+		void addNumbers(typename T::iterator begin, typename T::iterator end) {
+			if (std::distance(begin, end) > _maxsize - _size)
+				throw Span::NumberLimitException();
+			while (begin != end)
+				addNumber(*(begin++));
+		}
 };
-
-#endif
