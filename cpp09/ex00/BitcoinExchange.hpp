@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/11 18:33:49 by nboer             #+#    #+#             */
-/*   Updated: 2026/01/11 19:18:22 by nboer            ###   ########.fr       */
+/*   Created: 2026/01/11 19:17:49 by nboer             #+#    #+#             */
+/*   Updated: 2026/01/11 19:43:12 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-#include "BitcoinExchange.hpp"
+#include <exception>
+#include <map>
 
-int handle_error(const std::string &msg, int code) {
-	std::cerr << "Error: " << msg << std::endl;
-	return code;	
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc != 2)
-		return handle_error("invalid error argument count", 1);
-
-	std::ifstream file(argv[1]);
-	if (!file)
-		return handle_error("invalid file", 1);
+class BitcoinExchange {
+	public:
+		BitcoinExchange();
+		~BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange &copy);
+		BitcoinExchange &operator=(const BitcoinExchange &src);
+	private:
+		std::map<time_t, double> _data;
 }

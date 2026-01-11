@@ -1,30 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/11 18:33:49 by nboer             #+#    #+#             */
-/*   Updated: 2026/01/11 19:18:22 by nboer            ###   ########.fr       */
+/*   Created: 2026/01/11 19:17:27 by nboer             #+#    #+#             */
+/*   Updated: 2026/01/11 19:17:46 by nboer            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
 #include "BitcoinExchange.hpp"
-
-int handle_error(const std::string &msg, int code) {
-	std::cerr << "Error: " << msg << std::endl;
-	return code;	
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc != 2)
-		return handle_error("invalid error argument count", 1);
-
-	std::ifstream file(argv[1]);
-	if (!file)
-		return handle_error("invalid file", 1);
-}
