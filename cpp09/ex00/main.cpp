@@ -10,21 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
 #include "BitcoinExchange.hpp"
 
-int handle_error(const std::string &msg, int code) {
-	std::cerr << "Error: " << msg << std::endl;
-	return code;	
-}
-
-int	main(int argc, char **argv)
+int	main(int argc, char **av)
 {
-	if (argc != 2)
-		return handle_error("invalid error argument count", 1);
+	if (argc != 2) {
+		std::cerr << "Error: could not open file." << std::endl;
+		return 1;
+	}
 
-	std::ifstream file(argv[1]);
-	if (!file)
-		return handle_error("invalid file", 1);
-}
+	BitcoinExchange btc;
+	btc.loadDatabase("data.csv");
+	btc.processInput(av[1]);
+
+	return 0;
+} 

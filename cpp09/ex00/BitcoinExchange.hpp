@@ -12,20 +12,25 @@
 
 #include <iostream>
 #include <fstream>
-#include <exception>
+#include <sstream>
 #include <map>
+#include <string>
 
 class BitcoinExchange {
 	public:
-		class InvalidFileException : public std::exception {
-			public:
-				const char *what() 
-		}
 		BitcoinExchange();
 		~BitcoinExchange();
 		BitcoinExchange(const BitcoinExchange &copy);
 		BitcoinExchange &operator=(const BitcoinExchange &src);
+
+		void loadDatabase(const std::string &dbFile);
+		void processInput(const std::string &inputFile);
+
 	private:
-		std::map<time_t, double> _data;
+		std::map<std::string, double> _data;
+
+		bool	isValidDate(const std::string &date);
+		bool	isValidValue(const std::string &str, double &outValue);
+		double	getRate(const std::string &date);
 		
 };
