@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nboer <nboer@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/08 14:33:54 by nick              #+#    #+#             */
+/*   Updated: 2026/04/23 11:45:41 by nboer            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PmergeMe.hpp"
 #include <iostream>
 #include <sstream>
@@ -48,17 +60,6 @@ void PmergeMe::displaySequence(const std::string &label, const std::vector<int> 
 }
 
 
-// Jacobsthal order
-/*
- * Returns the insertion indices (0-based into the pend array) in the
- * order Ford-Johnson prescribes, so that each binary search upper-bound
- * never exceeds the previous worst case.
- *
- * Jacobsthal numbers: 0 1 1 3 5 11 21 43 ...
- * J(n) = J(n-1) + 2*J(n-2)
- *
- * We emit indices in groups: each group goes from J(k) down to J(k-1)+1.
- */
 std::vector<int> PmergeMe::jacobsthalOrder(int n)
 {
     // Build enough Jacobsthal numbers to cover n elements
@@ -86,7 +87,6 @@ std::vector<int> PmergeMe::jacobsthalOrder(int n)
             }
         }
     }
-    // Any stragglers (shouldn't happen with correct Jacobsthal, but safety net)
     for (int i = 0; i < n; ++i)
         if (!inserted[i])
             order.push_back(i);
